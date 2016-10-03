@@ -86,6 +86,7 @@ func (cp *ChildProcess) Initialize(ps Job, numrestarts int) error {
 		cp.Proc.Dir = wd
 	}
 	if err := cp.Proc.Start(); err != nil {
+		fmt.Println(err)
 		return err
 	}
 	cp.PID = cp.Proc.Process.Pid
