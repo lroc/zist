@@ -1,5 +1,6 @@
 Name = "app1"
 Path = "/path/to/app1"
+Workingdir = "/path/to"
 Args = "-your -app -args"
 Restart = true
 Web = true

@@ -18,7 +18,7 @@ Copyright (C) 2016  Eric Ziscky
 package main
 
 import (
-	"bufio"
+	//"bufio"
 	"errors"
 	"fmt"
 	"log"
@@ -41,24 +41,24 @@ var (
 )
 
 func readConfigInput(configonly int) {
-	scanner := bufio.NewScanner(os.Stdin)
+	//scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Print("Config Installation Path (leave blank for default: /etc/zist ): ")
-	scanner.Scan()
-	text := scanner.Text()
-	if len(text) > 0 {
-		INSTALL_DIR = text
-	}
+	//scanner.Scan()
+	//text := scanner.Text()
+	//if len(text) > 0 {
+	//	INSTALL_DIR = text
+	//}
 	if configonly > 0 {
 		return
 	}
 
 	fmt.Print("Binary Installation Path (leave blank for default: /usr/bin ): ")
-	scanner.Scan()
-	text2 := scanner.Text()
-	if len(text2) > 0 {
-		BINARY_DIR = text2
-	}
+	//scanner.Scan()
+	//text2 := scanner.Text()
+	//if len(text2) > 0 {
+	//	BINARY_DIR = text2
+	//}
 }
 func install() error {
 	//ask user for install dir
