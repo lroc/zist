@@ -70,10 +70,10 @@ func (cp *ChildProcess) Initialize(ps Job, numrestarts int) error {
 		return err
 	}
 	if len(ps.Args) < 1 {
-		cp.Proc = exec.Command(wd + bname)
+		cp.Proc = exec.Command(wd + bname, os.Getenv("PATH"))
 	} else {
 		log.Println(ps.Args)
-		cp.Proc = exec.Command(wd+bname, ps.Args)
+		cp.Proc = exec.Command(wd + bname, os.Getenv("PATH"), ps.Args)
 	}
 	cp.StdOutR, cp.StdOutWr = io.Pipe()
 	cp.StdErrR, cp.StdErrWr = io.Pipe()
